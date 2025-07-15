@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects"><div class="dropdown">
+    <button class="dropbtn">Projects
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Python</a>
+      <a href="#">Web-design</a>
+      <a href="#">AI models</a>
+    </div></a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    <div class="grid-container" id="home">
+        <div class="box" style="grid-area:box-1 ;"><img src="myprofile2.jpg" alt=""></div>
+        <div class="box" style="grid-area:box-2 ;"><h1 style="font-size: 300%; font-family:Montserrat;color: rgb(21, 88, 146);">Gagan rai</h1></div>
+        <div class="box" style="grid-area:box-3 ;"><img src="myprofile3.jpg" alt=""></div>
+        <div class="box" style="grid-area:box-4 ;"><div class="typing"><span></span></div></div>
+        <div class="box" style="grid-area:box-5 ;"><div class="social_icons">
+                <a href="https://www.linkedin.com/in/gagan-rai1/" class="fa-brands fa-linkedin" style="color: white;"></a>
+                <a href="https://www.instagram.com/gaganrai_10/"class="fa-brands fa-instagram" style="color: white;"></a>
+                <a href="https://github.com/wannabecoder01/"class="fa-brands fa-github" style="color: white;"></a>
+            </div></div>
+    </div>
+    
+    <div class="grid-container3" id="about">
+        <div class="box3" style="grid-area:box-1a ;background-color: transparent;"><img  src="myprofile.JPG" alt=""></div>
+        <div class="box3" style="grid-area:box-2a ;background-color:transparent"><video width="300px" height="300px" controls >
+            <source src="about2.mp4" type="video/mp4">
+            Your browser does not support HTML video.
+            </video></div>
+        <div class="box3" style="grid-area:box-3a ; background-color:transparent"><p style="font-family:Montserrat;color:white;line-height: 2; padding-left: 5%;">I'm a student pursuing my B.Tech in Computer Science from NMAMIT. <br>I have a passion for coding and a growing interest in finance.<br> I primarily use python for problem solving and handling data.<br>I like sports such as football and basketball<br>I like making gym videos and lifestyle content</p></div>
+        <div class="box3" style="grid-area:box-4a ; background-color:transparent"><h1 style="font-size: 250%; font-family:Montserrat;color:bisque;">About Me</h1></div>
+    </div>
+
+    <div class="carousel-wrapper" id="projects">
+    <input type="radio" name="carousel" id="carousel-1" checked>
+    <input type="radio" name="carousel" id="carousel-2">
+    <input type="radio" name="carousel" id="carousel-3">
+
+    <div class="carousel">
+        <div class="carousel-item item-1">
+            <img src="project1.png" alt="Python" class="img2">
+            <h1 class="carousel-title">Python</h1>
+            <p style="font-family: Montserrat, sans-serif; font-size:0.9rem; color: rgba(0, 0, 0, 0.737);">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere numquam eos consequatur praesentium fuga iste modi cupiditate? Quae cum, consequuntur natus architecto, impedit ipsam odit possimus, error perspiciatis animi nam.</p>
+        </div>
+        <div class="carousel-item item-2">
+            <img src="project2.png" alt="Web-design" class="img2">
+            <h1 class="carousel-title">Web-design</h1>
+            <p style="font-family: Montserrat, sans-serif; font-size:0.9rem; color: rgba(0, 0, 0, 0.737);">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere numquam eos consequatur praesentium fuga iste modi cupiditate? Quae cum, consequuntur natus architecto, impedit ipsam odit possimus, error perspiciatis animi nam.</p>
+        </div>
+        <div class="carousel-item item-3">
+            <img src="project3.png" alt="AI models" class="img2">
+            <h1 class="carousel-title">AI models</h1>
+            <p style="font-family: Montserrat, sans-serif; font-size:0.9rem; color: rgba(0, 0, 0, 0.737);">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere numquam eos consequatur praesentium fuga iste modi cupiditate? Quae cum, consequuntur natus architecto, impedit ipsam odit possimus, error perspiciatis animi nam.</p>
+        </div>
+    </div>
+    <div class="carousel-controls">
+        <label for="carousel-1" class="carousel-btn"></label>
+        <label for="carousel-2" class="carousel-btn"></label>
+        <label for="carousel-3" class="carousel-btn"></label>
+    </div>
+</div>
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
+
+
