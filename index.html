@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,33 +58,65 @@
     </div>
 
     <div class="carousel-wrapper" id="projects">
-    <input type="radio" name="carousel" id="carousel-1" checked>
-    <input type="radio" name="carousel" id="carousel-2">
-    <input type="radio" name="carousel" id="carousel-3">
-
     <div class="carousel">
         <div class="carousel-item item-1">
+            <div class="carousel-text">
             <img src="project1.png" alt="Python" class="img2">
-            <h1 class="carousel-title">Python</h1>
-            <p style="font-family: Montserrat, sans-serif; font-size:0.9rem; color: rgba(0, 0, 0, 0.737);">using python to scrape the web for stock details to analyse and come up with charts, used yahoo finance api to get details and used excel spreadsheet to create charts.<br>what i learnt: scraping and managing data.</p>
+        
+                <h1 class="carousel-title">Python</h1>
+                <p class="carousel-desc">using python to scrape the web for stock details to analyse and come up with charts, used yahoo finance api to get details and used excel spreadsheet to create charts.<br>what i learnt: scraping and managing data.</p>
+            </div>
         </div>
-        <div class="carousel-item item-2">
+        <div class="carousel-item item-2 active">
+            <div class="carousel-text">
             <img src="project2.png" alt="Web-design" class="img2">
-            <h1 class="carousel-title">Web-design</h1>
-            <p style="font-family: Montserrat, sans-serif; font-size:0.9rem; color: rgba(0, 0, 0, 0.737);">using html and css made a website that stores the architecture of building and represented in a website using svg file format, used  draw.io to edit the svg file and used javascript to make simple animation.<br>what i learnt: web-design and animation.</p>
+    
+                <h1 class="carousel-title">Web-design</h1>
+                <p class="carousel-desc">using html and css made a website that stores the architecture of building and represented in a website using svg file format, used  draw.io to edit the svg file and used javascript to make simple animation.<br>what i learnt: web-design and animation.</p>
+            </div>
         </div>
         <div class="carousel-item item-3">
+            <div class="carousel-text">
             <img src="project3.png" alt="AI models" class="img2">
-            <h1 class="carousel-title">AI models</h1>
-            <p style="font-family: Montserrat, sans-serif; font-size:0.9rem; color: rgba(0, 0, 0, 0.737);">using apis made an ai automation that replies using WhatsApps messages for appointments and reservation ,used n8n automation to plug openai chatbot into WhatsApp using developer setting.<br>what i learnt: ai implementation and automation using n8n.</p>
+    
+                <h1 class="carousel-title">AI models</h1>
+                <p class="carousel-desc">using apis made an ai automation that replies using WhatsApps messages for appointments and reservation ,used n8n automation to plug openai chatbot into WhatsApp using developer setting.<br>what i learnt: ai implementation and automation using n8n.</p>
+            </div>
         </div>
-    </div>
-    <div class="carousel-controls">
-        <label for="carousel-1" class="carousel-btn"></label>
-        <label for="carousel-2" class="carousel-btn"></label>
-        <label for="carousel-3" class="carousel-btn"></label>
+        <button class="carousel-arrow left">&#10094;</button>
+        <button class="carousel-arrow right">&#10095;</button>
     </div>
 </div>
+<script>
+// Simple JS carousel logic
+const items = document.querySelectorAll('.carousel-item');
+const leftBtn = document.querySelector('.carousel-arrow.left');
+const rightBtn = document.querySelector('.carousel-arrow.right');
+let current = 1;
+
+function showItem(idx) {
+    items.forEach((item, i) => {
+        item.classList.remove('active');
+        item.style.opacity = '0.5';
+        item.style.transform = 'scale(0.8) translateX(' + ((i-idx)*360) + 'px) rotateY(' + ((i === idx) ? '0deg' : (i < idx ? '75deg' : '-75deg')) + ')';
+        item.style.zIndex = (i === idx) ? '2' : '1';
+    });
+    items[idx].classList.add('active');
+    items[idx].style.opacity = '1';
+    items[idx].style.transform = 'scale(1.2) translateX(0) rotateY(0deg)';
+    items[idx].style.zIndex = '2';
+}
+
+leftBtn.addEventListener('click', () => {
+    current = (current - 1 + items.length) % items.length;
+    showItem(current);
+});
+rightBtn.addEventListener('click', () => {
+    current = (current + 1) % items.length;
+    showItem(current);
+});
+showItem(current);
+</script>
     <script>
         // Hamburger menu toggle
         const hamburger = document.querySelector('.hamburger');
