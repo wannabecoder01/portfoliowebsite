@@ -76,10 +76,9 @@ img{
 }
 
 header {
-    width: 100%;
+    width: 400px;
     position: fixed;
     top: 0;
-    left: 0;
     z-index: 1000;
 }
 
@@ -90,7 +89,8 @@ header {
     justify-content: center;
     align-items: center;
     padding: 1rem 2rem;
-    background:#1a171736;
+    background:rgba(0, 0, 0, 0.521);
+    backdrop-filter: blur(10px);
     color: #fff;
     box-sizing: border-box;
 }
